@@ -4,8 +4,8 @@ const createTeam = (team) => {
         return`<div>
             <h1>Name: ${manager.getName()}</h1>
             <h2>Role: ${manager.getRole()}</h2>
-            <p>ID: ${manager.getID()}
-            Email: ${manager.getEmail()}
+            <p>ID: ${manager.getId()}
+            Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a>
             Office Number: ${manager.getOfficeNumber()}
             </p>
         </div>`
@@ -15,7 +15,7 @@ const createTeam = (team) => {
         return`<div>
         <h1>Name: ${intern.getName()}</h1>
         <h2>Role: ${intern.getRole()}</h2>
-        <p>ID: ${intern.getID()}
+        <p>ID: ${intern.getId()}
         Email: ${intern.getEmail()}
         School: ${intern.getSchool()}
         </p>
@@ -27,9 +27,9 @@ const createTeam = (team) => {
         return`<div>
         <h1>Name: ${engineer.getName()}</h1>
         <h2>Role: ${engineer.getRole()}</h2>
-        <p>ID: ${engineer.getID()}
+        <p>ID: ${engineer.getId()}
         Email: ${engineer.getEmail()}
-        GitHub: ${engineer.getGithub()}
+        GitHub: <a href='https://github.com/${engineer.getGithub()}'>${engineer.getGithub()}</a>
         </p>
     </div>`
     }
@@ -55,6 +55,9 @@ module.exports = (team) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<header>
+<h1> My Team </h1>
+</header>
 <body>
     ${createTeam(team)}
 </body>
